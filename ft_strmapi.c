@@ -6,7 +6,7 @@
 /*   By: mzary <mzary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 13:52:14 by mzary             #+#    #+#             */
-/*   Updated: 2024/10/25 18:07:36 by mzary            ###   ########.fr       */
+/*   Updated: 2024/10/31 16:29:03 by mzary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	if (!s || !f)
 		return ((char *)s);
 	res = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
-	if (res == (char *)0)
-		return ((char *)0);
+	if (res == NULL)
+		return (NULL);
 	i = 0;
 	while (s[i])
 	{

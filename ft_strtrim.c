@@ -6,7 +6,7 @@
 /*   By: mzary <mzary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 17:05:23 by mzary             #+#    #+#             */
-/*   Updated: 2024/10/27 13:30:45 by mzary            ###   ########.fr       */
+/*   Updated: 2024/10/31 16:38:35 by mzary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static int	lower_trim(char const *s1, char const *set)
 	int	i;
 
 	i = 0;
-	while (i < (int)ft_strlen(s1) && fromset(*(s1 + i), set))
+	while ((size_t)i < ft_strlen(s1) && fromset(*(s1 + i), set))
 	{
 		i++;
 	}
@@ -61,7 +61,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	if (!set)
 		return ((char *)s1);
 	if (!s1)
-		return ((char *)0);
+		return (NULL);
 	i = lower_trim(s1, set);
 	j = upper_trim(s1, set);
 	if (j < i)
@@ -69,8 +69,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	else
 		size = j - i + 2;
 	copy = (char *)malloc(sizeof(char) * size);
-	if (copy == (char *)0)
-		return ((char *)0);
-	ft_strlcpy(copy, s1 + i, (size_t)size);
+	if (copy == NULL)
+		return (NULL);
+	ft_strlcpy(copy, s1 + i, size);
 	return (copy);
 }

@@ -6,7 +6,7 @@
 /*   By: mzary <mzary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 20:26:40 by mzary             #+#    #+#             */
-/*   Updated: 2024/10/24 13:51:16 by mzary            ###   ########.fr       */
+/*   Updated: 2024/10/31 15:25:06 by mzary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,15 @@ static char	*edge_case(int n)
 	if (n == 0)
 	{
 		edge_result = (char *)malloc(sizeof(char) * 2);
-		if (edge_result == (char *)0)
-			return ((char *)0);
+		if (edge_result == NULL)
+			return (NULL);
 		ft_strlcpy(edge_result, "0", 2);
 	}
 	else
 	{
 		edge_result = (char *)malloc(sizeof(char) * 12);
-		if (edge_result == (char *)0)
-			return ((char *)0);
+		if (edge_result == NULL)
+			return (NULL);
 		ft_strlcpy(edge_result, "-2147483648", 12);
 	}
 	return (edge_result);
@@ -74,8 +74,8 @@ char	*ft_itoa(int n)
 	if (n == 0 || n == -2147483648)
 		return (edge_case(n));
 	result = (char *)malloc(sizeof(char) * allocate(n));
-	if (result == (char *)0)
-		return ((char *)0);
+	if (result == NULL)
+		return (NULL);
 	digit = 0;
 	sign = n;
 	while (n)

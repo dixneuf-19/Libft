@@ -6,7 +6,7 @@
 /*   By: mzary <mzary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 15:54:44 by mzary             #+#    #+#             */
-/*   Updated: 2024/10/27 13:04:10 by mzary            ###   ########.fr       */
+/*   Updated: 2024/10/31 16:43:20 by mzary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 static size_t	proper(size_t len, size_t strlen)
 {
 	if (len < strlen)
-		return (sizeof(char) * (len + 1));
-	return (sizeof(char) * (strlen + 1));
+		return (len + 1);
+	return (strlen + 1);
 }
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
@@ -24,19 +24,19 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*sub;
 
 	if (!s)
-		return ((char *)0);
+		return (NULL);
 	if (start >= ft_strlen(s))
 	{
 		sub = (char *)malloc(sizeof(char));
-		if (sub == (char *)0)
-			return ((char *)0);
+		if (sub == NULL)
+			return (NULL);
 		ft_strlcpy(sub, "", 1);
 	}
 	else
 	{
-		sub = (char *)malloc(proper(len, ft_strlen(s) - start));
-		if (sub == (char *)0)
-			return ((char *)0);
+		sub = (char *)malloc(sizeof(char) * proper(len, ft_strlen(s) - start));
+		if (sub == NULL)
+			return (NULL);
 		ft_strlcpy(sub, s + start, proper(len, ft_strlen(s) - start));
 	}
 	return (sub);

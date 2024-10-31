@@ -6,7 +6,7 @@
 /*   By: mzary <mzary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 20:20:35 by mzary             #+#    #+#             */
-/*   Updated: 2024/10/25 18:04:25 by mzary            ###   ########.fr       */
+/*   Updated: 2024/10/31 16:26:04 by mzary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ int	ft_splits(char const *s, char c, char **splits, int count)
 		while (s[i] && s[i] != c)
 			i++;
 		splits[split] = (char *)malloc(sizeof(char) * (i - st + 1));
-		if (splits[split] == (char *)0)
+		if (splits[split] == NULL)
 		{
 			free_all(splits);
 			return (0);
@@ -67,7 +67,7 @@ int	ft_splits(char const *s, char c, char **splits, int count)
 		ft_strlcpy(splits[split], s + st, i - st + 1);
 		split++;
 	}
-	splits[count] = (char *)0;
+	splits[count] = NULL;
 	return (1);
 }
 
@@ -77,12 +77,12 @@ char	**ft_split(char const *s, char c)
 	int		count;
 
 	if (!s)
-		return ((char **)0);
+		return (NULL);
 	count = s_count(s, c);
 	splits = (char **)malloc(sizeof(char *) * (count + 1));
-	if (splits == (char **)0)
-		return ((char **)0);
+	if (splits == NULL)
+		return (NULL);
 	if (!ft_splits(s, c, splits, count))
-		return ((char **)0);
+		return (NULL);
 	return (splits);
 }

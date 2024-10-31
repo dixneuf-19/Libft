@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mzary <mzary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 15:49:48 by mzary             #+#    #+#             */
-/*   Updated: 2024/10/27 19:29:05 by mzary            ###   ########.fr       */
+/*   Updated: 2024/10/31 16:15:06 by mzary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,11 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	while (lst)
 	{
 		elt = ft_lstnew((*f)(lst->content));
-		if (elt == (t_list *)0)
+		if (elt == NULL)
 		{
 			if (!first)
 				ft_lstclear(&start, del);
-			return ((t_list *)0);
+			return (NULL);
 		}
 		if (first++ == 0)
 			start = elt;

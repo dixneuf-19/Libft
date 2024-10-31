@@ -6,7 +6,7 @@
 /*   By: mzary <mzary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 14:47:25 by mzary             #+#    #+#             */
-/*   Updated: 2024/10/27 12:50:38 by mzary            ###   ########.fr       */
+/*   Updated: 2024/10/31 16:30:08 by mzary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,5 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 			return ((char *)(big + pos));
 		pos++;
 	}
-	return ((char *)0);
+	return (NULL);
 }

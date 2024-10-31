@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mzary <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 15:34:20 by mzary             #+#    #+#             */
-/*   Updated: 2024/10/24 15:35:58 by mzary            ###   ########.fr       */
+/*   Updated: 2024/10/31 16:14:52 by mzary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ t_list	*ft_lstnew(void *content)
 	t_list	*element;
 
 	element = (t_list *)malloc(sizeof(t_list));
-	if (element == (t_list *)0)
-		return ((t_list *)0);
+	if (element == NULL)
+		return (NULL);
 	element->content = content;
 	element->next = NULL;
 	return (element);

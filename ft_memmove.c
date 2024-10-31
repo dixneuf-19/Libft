@@ -6,7 +6,7 @@
 /*   By: mzary <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 15:50:04 by mzary             #+#    #+#             */
-/*   Updated: 2024/10/24 18:39:02 by mzary            ###   ########.fr       */
+/*   Updated: 2024/10/31 16:20:51 by mzary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,7 @@
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	if (dest < src)
-	{
 		ft_memcpy(dest, src, n);
-	}
 	else if (dest > src)
 	{
 		while (n > 0)

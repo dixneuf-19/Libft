@@ -6,7 +6,7 @@
 /*   By: mzary <mzary@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 15:15:10 by mzary             #+#    #+#             */
-/*   Updated: 2024/10/29 17:19:37 by mzary            ###   ########.fr       */
+/*   Updated: 2024/10/31 15:21:07 by mzary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ void	*ft_calloc(size_t nmemb, size_t size)
 
 	bytes = nmemb * size;
 	if (nmemb && bytes / nmemb != size)
-		return ((void *)0);
+		return (NULL);
 	pointer = malloc(sizeof(char) * (nmemb * size));
-	if (pointer == (void *)0)
-		return ((void *)0);
-	ft_memset(pointer, 0, nmemb * size);
+	if (pointer == NULL)
+		return (NULL);
+	ft_bzero(pointer, nmemb * size);
 	return (pointer);
 }
