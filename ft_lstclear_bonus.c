@@ -6,11 +6,11 @@
 /*   By: mzary <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 15:48:40 by mzary             #+#    #+#             */
-/*   Updated: 2024/10/31 16:15:59 by mzary            ###   ########.fr       */
+/*   Updated: 2024/11/01 04:21:05 by mzary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft_bonus.h"
 
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {

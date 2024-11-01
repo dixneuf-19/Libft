@@ -6,7 +6,7 @@
 #    By: mzary <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/26 17:48:57 by mzary             #+#    #+#              #
-#    Updated: 2024/10/31 20:55:34 by mzary            ###   ########.fr        #
+#    Updated: 2024/11/01 04:24:38 by mzary            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,8 @@ BSRC = ft_lstadd_back_bonus.c ft_lstadd_front_bonus.c ft_lstclear_bonus.c \
 	ft_lstnew_bonus.c ft_lstsize_bonus.c
 MOBJ = $(MSRC:.c=.o)
 BOBJ = $(BSRC:.c=.o)
-HEADER = libft.h
+MHDR = libft.h
+BHDR = libft_bonus.h
 
 all: $(NAME)
 
@@ -38,7 +39,11 @@ $(NAME): $(MOBJ)
 
 bonus: $(MOBJ) $(BOBJ)
 
-%.o: %.c $(HEADER)
+%bonus.o: %bonus.c $(BHDR)
+	$(CC) $(CFLAGS) -c $< -o $@
+	$(AR) $(NAME) $@
+
+%.o: %.c $(MHDR)
 	$(CC) $(CFLAGS) -c $< -o $@
 	$(AR) $(NAME) $@
 
