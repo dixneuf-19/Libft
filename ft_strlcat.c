@@ -16,6 +16,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	size_t	len;
 
+	if (!dst && !size)
+		return (ft_strlen(src)); // thank you Imane
 	len = ft_strlen((const char *)dst);
 	if (size >= ft_strlen((const char *)dst) + 1)
 	{
