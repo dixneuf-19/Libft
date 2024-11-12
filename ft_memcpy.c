@@ -16,8 +16,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	size_t	i;
 
-	if (!dest && !src)
-		return (NULL);
+	if (dest == src)
+		return (dest); // Thank you Worshipper of the High above
 	i = 0;
 	while (i < n)
 	{
