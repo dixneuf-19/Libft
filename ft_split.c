@@ -35,10 +35,13 @@ static int	s_count(char const *s, char c)
 
 void	free_all(char **splits)
 {
-	while (*splits)
+	int	i;
+
+	i = 0;
+	while (splits[i])
 	{
-		free(*splits);
-		splits++;
+		free(splits[i]);
+		i++;
 	}
 	free(splits);
 }
